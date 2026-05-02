@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menabung setelah Berhutang | EduSmartPinjol - Edukasi Pinjaman Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-sage: #7d9d7d;
+            --light-sage: #b7d7b7;
+            --dark-sage: #4a6b4a;
+            --primary-mustard: #e6b800;
+            --light-mustard: #ffe066;
+            --dark-mustard: #b38600;
+            --white: #ffffff;
+            --cream: #fff9e6;
+            --light-gray: #f5f7fa;
+            --dark-charcoal: #2d3e4f;
+            --shadow-soft: 0 15px 35px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 20px 40px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--dark-charcoal);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header - Nuansa Berbeda */
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(125, 157, 125, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-mustard);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--dark-sage);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-icon {
+            color: white;
+            background: linear-gradient(135deg, var(--dark-sage), var(--primary-sage));
+            padding: 10px 12px;
+            border-radius: 18px;
+            transform: rotate(-2deg);
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(74, 107, 74, 0.2);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(0deg) scale(1.05);
+            background: linear-gradient(135deg, var(--primary-mustard), var(--dark-mustard));
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, var(--primary-sage), var(--dark-sage));
+            color: var(--white);
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 15px rgba(74, 107, 74, 0.2);
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, var(--dark-sage), #2d4a2d);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(74, 107, 74, 0.3);
+        }
+
+        /* Article Hero - Nuansa Lembut */
+        .article-hero {
+            background: linear-gradient(145deg, var(--dark-sage) 0%, var(--primary-sage) 50%, #9bb89b 100%);
+            color: var(--white);
+            padding: 80px 0 100px;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            border-radius: 0 0 60px 60px;
+            overflow: hidden;
+        }
+
+        .article-hero::before {
+            content: "💰🌱📈";
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.06;
+            left: -20px;
+            bottom: -30px;
+            transform: rotate(-5deg);
+            white-space: nowrap;
+        }
+
+        .article-hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .article-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            font-weight: 700;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 22px;
+            border-radius: 40px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .meta-item i {
+            background: var(--primary-mustard);
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            color: var(--dark-charcoal);
+        }
+
+        /* Article Content */
+        .article-container {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 40px;
+        }
+
+        .article-content {
+            background-color: var(--white);
+            border-radius: 32px;
+            box-shadow: var(--shadow-soft);
+            padding: 45px;
+            border: 1px solid rgba(125, 157, 125, 0.1);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 24px;
+            margin-bottom: 35px;
+            box-shadow: 0 20px 30px -10px rgba(74, 107, 74, 0.2);
+            transition: var(--transition);
+            border: 4px solid var(--light-sage);
+        }
+
+        .article-image:hover {
+            transform: scale(1.02);
+            border-color: var(--primary-mustard);
+        }
+
+        .article-section {
+            margin-bottom: 50px;
+        }
+
+        .article-section h2 {
+            color: var(--dark-sage);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary-mustard);
+            font-size: 2rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .article-section h2 i {
+            color: var(--primary-mustard);
+            margin-right: 10px;
+            background: var(--light-sage);
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .article-section h3 {
+            color: var(--dark-sage);
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .article-section p {
+            margin-bottom: 20px;
+            font-size: 1.08rem;
+            color: #3a4a5a;
+        }
+
+        /* Box Styles Baru */
+        .insight-box {
+            background: linear-gradient(145deg, #f0f7e8, #e3f0da);
+            border-radius: 24px;
+            padding: 30px;
+            margin: 35px 0;
+            border: 1px dashed var(--primary-sage);
+            position: relative;
+        }
+
+        .insight-box h4 {
+            color: var(--dark-sage);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .strategy-box {
+            background: #f9f3e7;
+            border-radius: 24px 24px 24px 4px;
+            padding: 30px;
+            margin: 35px 0;
+            border-left: 8px solid var(--primary-mustard);
+            box-shadow: 0 10px 20px rgba(230, 184, 0, 0.1);
+        }
+
+        .strategy-box h4 {
+            color: #8b6b00;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+        }
+
+        .milestone-box {
+            background: #e8f0fe;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #a3c4f3;
+        }
+
+        .milestone-box h4 {
+            color: #1a3b5d;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--light-sage), var(--primary-mustard), var(--light-sage));
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 3px solid var(--primary-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark-sage);
+            background: white;
+            transition: var(--transition);
+        }
+
+        .step.active .step-circle {
+            background: var(--primary-mustard);
+            border-color: var(--dark-mustard);
+            color: var(--dark-charcoal);
+            transform: scale(1.1);
+            box-shadow: 0 0 0 5px rgba(230, 184, 0, 0.2);
+        }
+
+        .step-label {
+            font-weight: 600;
+            color: var(--dark-sage);
+        }
+
+        /* Tabel Perbandingan */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 35px 0;
+        }
+
+        .method-card {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .method-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-mustard);
+        }
+
+        .method-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .method-card.avalanche h4 {
+            color: #2c3e50;
+        }
+
+        .method-card.snowball h4 {
+            color: #27ae60;
+        }
+
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-sage);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        /* Savings Pyramid */
+        .pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .pyramid-level {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            margin: 2px 0;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .pyramid-level:hover {
+            transform: scale(1.02);
+            filter: brightness(1.05);
+        }
+
+        .level-1 {
+            background: #4a6b4a;
+            color: white;
+            width: 80%;
+        }
+        .level-2 {
+            background: #5d8c5d;
+            color: white;
+            width: 70%;
+        }
+        .level-3 {
+            background: #7d9d7d;
+            color: white;
+            width: 60%;
+        }
+        .level-4 {
+            background: #9bb89b;
+            color: var(--dark-charcoal);
+            width: 50%;
+        }
+        .level-5 {
+            background: #b7d7b7;
+            color: var(--dark-charcoal);
+            width: 40%;
+        }
+
+        /* Checklist */
+        .habit-checklist {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .habit-checklist li {
+            margin-bottom: 18px;
+            padding-left: 45px;
+            position: relative;
+            font-weight: 500;
+            background: #f9f9f9;
+            padding: 15px 15px 15px 55px;
+            border-radius: 16px;
+            transition: var(--transition);
+        }
+
+        .habit-checklist li:hover {
+            background: #f0f7e8;
+            transform: translateX(5px);
+        }
+
+        .habit-checklist li:before {
+            content: '🌱';
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            font-size: 1.3rem;
+        }
+
+        .habit-checklist li.gold:before {
+            content: '🌟';
+        }
+
+        /* Kalkulator */
+        .calculator-panel {
+            background: linear-gradient(145deg, #f5f5f5, #ffffff);
+            border-radius: 28px;
+            padding: 35px;
+            margin: 35px 0;
+            border: 2px solid var(--light-sage);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .calc-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .calc-field {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .calc-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-sage);
+        }
+
+        .calc-field input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .calc-field input:focus {
+            border-color: var(--primary-mustard);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(230, 184, 0, 0.1);
+        }
+
+        .calc-result {
+            background: var(--dark-sage);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 25px;
+            text-align: center;
+            display: none;
+        }
+
+        .calc-result h4 {
+            color: var(--primary-mustard);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin: 10px 0;
+        }
+
+        /* Sidebar */
+        .article-sidebar {
+            background: white;
+            border-radius: 32px;
+            box-shadow: var(--shadow-soft);
+            padding: 35px 25px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            border: 1px solid var(--light-sage);
+        }
+
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-section h3 {
+            color: var(--dark-sage);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary-mustard);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .motivation-card {
+            background: linear-gradient(145deg, var(--light-sage), #c8e0c8);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .motivation-card i {
+            font-size: 2.5rem;
+            color: var(--dark-mustard);
+            margin-bottom: 15px;
+        }
+
+        .motivation-card blockquote {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--dark-charcoal);
+        }
+
+        .mini-stats {
+            background: #f0f7e8;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-item {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-sage);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(145deg, var(--dark-sage), #2d4a2d);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 60px;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-mustard);
+            color: var(--dark-charcoal);
+            border: none;
+            padding: 16px 40px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-mustard);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(230, 184, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 16px 40px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(145deg, #2d4a2d, #1a2f1a);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-mustard);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: #c8e0c8;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            color: var(--primary-mustard);
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: #c8e0c8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            color: #c8e0c8;
+        }
+
+        .contact-item i {
+            color: var(--primary-mustard);
+            width: 22px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #a3c4a3;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-sidebar {
+                position: static;
+            }
+            
+            .article-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .article-hero {
+                padding: 60px 0 80px;
+            }
+            
+            .article-content {
+                padding: 30px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .progress-steps {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .progress-steps::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <span>EduSmartPinjol</span>
+            </a>
+            
+            <a href="dasboard.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Kembali ke Edukasi
+            </a>
+        </div>
+    </header>
+
+    <!-- Article Hero Section -->
+    <section class="article-hero">
+        <div class="container">
+            <h1>Menabung setelah Berhutang: Strategi Jitu Membangun Kebiasaan Menabung Meski Masih Mencicil</h1>
+            <p>Panduan lengkap menyeimbangkan cicilan dan tabungan, serta cara membangun fondasi finansial yang kokoh setelah terjerat pinjaman.</p>
+            
+            <div class="article-meta">
+                <div class="meta-item">
+                    <i class="fas fa-user-check"></i>
+                    <span>Oleh: Tim Finansial EduSmart</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Dipublikasikan: 16 Februari 2026</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span>Waktu baca: 11 menit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <div class="container">
+        <div class="article-container">
+            <!-- Main Article -->
+            <main class="article-content">
+                <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Menabung setelah Berhutang" class="article-image">
+                
+                <div class="insight-box">
+                    <h4><i class="fas fa-lightbulb"></i> Fakta Mengejutkan</h4>
+                    <p>Berdasarkan survei OJK 2025, 78% orang yang baru melunasi pinjaman kesulitan memulai kebiasaan menabung. Namun, mereka yang berhasil menabung minimal 10% dari penghasilan dalam 6 bulan pertama setelah lunas, memiliki kemungkinan 3x lebih besar untuk tidak kembali berhutang konsumtif.</p>
+                </div>
+                
+                <div class="article-section">
+                    <h2><i class="fas fa-seedling"></i> Mengapa Menabung Setelah Berhutang Itu Sulit (Tapi WAJIB dilakukan)?</h2>
+                    <p>Setelah terbiasa mengalokasikan sebagian besar penghasilan untuk cicilan, pola pikir "gaji habis untuk bayar utang" sering terbawa meskipun pinjaman sudah lunas. Ini yang disebut <strong>financial scarring</strong> atau luka finansial. Akibatnya, banyak orang justru kembali berhutang karena merasa penghasilan tidak cukup.</p>
+                    
+                    <div class="strategy-box">
+                        <h4><i class="fas fa-brain"></i> Mindset Shift Penting</h4>
+                        <p><strong>Dari "Sisa baru ditabung" menjadi "Tabung dulu, baru gunakan sisanya".</strong> Kebiasaan menabung bukan tentang seberapa besar penghasilan, tetapi tentang prioritas dan disiplin.</p>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <h2><i class="fas fa-sitemap"></i> 5 Tahap Membangun Kebiasaan Menabung Pasca-Hutang</h2>
+                    
+                    <div class="progress-steps">
+                        <div class="step active">
+                            <div class="step-circle">1</div>
+                            <div class="step-label">Evaluasi</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-circle">2</div>
+                            <div class="step-label">Anggaran</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-circle">3</div>
+                            <div class="step-label">Mulai Kecil</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-circle">4</div>
+                            <div class="step-label">Konsisten</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-circle">5</div>
+                            <div class="step-label">Otomatis</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h3>🔍 Tahap 1: Evaluasi "Financial Hangover"</h3>
+                        <p>Setelah pinjaman lunas, jangan langsung bernapas lega. Luangkan waktu 1-2 bulan untuk mengevaluasi ulang kondisi keuangan secara jujur. Hitung ulang pengeluaran rutin dan identifikasi pos-pos yang bisa dioptimalkan.</p>
+                        
+                        <h3>📝 Tahap 2: Buat Anggaran Baru</h3>
+                        <p>Alokasi dana cicilan yang sudah tidak ada harus segera "dipindahkan" ke pos lain, terutama tabungan. Jangan biarkan uang tersebut menguap begitu saja.</p>
+                        
+                        <h3>🌱 Tahap 3: Mulai dari yang Sangat Kecil</h3>
+                        <p>Jika belum terbiasa, mulailah dengan Rp 10.000 atau Rp 20.000 per hari. Targetkan menabung 5% dari penghasilan di bulan pertama, lalu naikkan bertahap.</p>
+                        
+                        <h3>🔄 Tahap 4: Konsisten, Bukan Besar Nominalnya</h3>
+                        <p>Konsistensi lebih penting daripada nominal. Menabung Rp 5.000 setiap hari selama setahun lebih baik daripada Rp 1,8 juta sekaligus di akhir tahun (yang biasanya gagal).</p>
+                        
+                        <h3>⚙️ Tahap 5: Otomatiskan</h3>
+                        <p>Gunakan fitur autodebet dari rekening ke tabungan atau aplikasi investasi. "Out of sight, out of mind" berlaku efektif untuk menabung.</p>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <h2><i class="fas fa-chart-bar"></i> Strategi Alokasi Gaji Ideal untuk Pasca-Hutang</h2>
+                    
+                    <div class="pyramid">
+                        <div class="pyramid-level level-1">Tabungan Darurat (10%)</div>
+                        <div class="pyramid-level level-2">Investasi Jangka Panjang (10%)</div>
+                        <div class="pyramid-level level-3">Cicilan (jika masih ada) (max 20%)</div>
+                        <div class="pyramid-level level-4">Kebutuhan Pokok (30-40%)</div>
+                        <div class="pyramid-level level-5">Gaya Hidup & Hiburan (20-30%)</div>
+                    </div>
+                    
+                    <p><strong>Catatan:</strong> Prioritaskan membangun dana darurat minimal 3 bulan pengeluaran sebelum mulai investasi berisiko.</p>
+                </div>
+                
+                <div class="article-section">
+                    <h2><i class="fas fa-balance-scale"></i> Menabung vs Melunasi Hutang Lebih Cepat: Mana Didahulukan?</h2>
+                    
+                    <div class="comparison-grid">
+                        <div class="method-card avalanche">
+                            <div style="display: flex; align-items: center;">
+                                <div class="method-icon"><i class="fas fa-bolt"></i></div>
+                                <h4>Metode Avalanche</h4>
+                            </div>
+                            <p><strong>Fokus:</strong> Lunasi hutang dengan bunga tertinggi terlebih dahulu sambil menabung minimal.</p>
+                            <p><strong>Cocok untuk:</strong> Hutang dengan bunga >15% per tahun (kartu kredit, pinjol).</p>
+                            <p><strong>Tips:</strong> Sisihkan 5% untuk tabungan, 95% sisanya untuk pelunasan cepat.</p>
+                        </div>
+                        
+                        <div class="method-card snowball">
+                            <div style="display: flex; align-items: center;">
+                                <div class="method-icon"><i class="fas fa-snowflake"></i></div>
+                                <h4>Metode Snowball</h4>
+                            </div>
+                            <p><strong>Fokus:</strong> Bangun tabungan Rp 500.000 - Rp 1 juta dulu, baru lunasi hutang.</p>
+                            <p><strong>Cocok untuk:</strong> Hutang bunga rendah (<10% per tahun) atau butuh motivasi psikologis.</p>
+                            <p><strong>Tips:</strong> Punya tabungan kecil memberi rasa aman dan mencegah pinjaman baru darurat.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone-box">
+                        <h4><i class="fas fa-trophy"></i> Target Milestone yang Realistis</h4>
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Bulan 1-3:</strong> Tabungan darurat Rp 500.000 - Rp 1 juta</li>
+                            <li><strong>Bulan 4-6:</strong> Tabungan darurat 1 bulan pengeluaran</li>
+                            <li><strong>Bulan 7-12:</strong> Tabungan darurat 3 bulan pengeluaran</li>
+                            <li><strong>Tahun 2:</strong> Mulai investasi jangka panjang</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <h2><i class="fas fa-calculator"></i> Kalkulator Tabungan Pasca-Hutang</h2>
+                    
+                    <div class="calculator-panel">
+                        <div class="calc-row">
+                            <div class="calc-field">
+                                <label>Penghasilan Bulanan (Rp)</label>
+                                <input type="number" id="income" value="5000000" placeholder="Contoh: 5000000">
+                            </div>
+                            <div class="calc-field">
+                                <label>Total Cicilan Saat Ini (Rp)</label>
+                                <input type="number" id="currentDebt" value="1000000" placeholder="Contoh: 1000000">
+                            </div>
+                        </div>
+                        
+                        <div class="calc-row">
+                            <div class="calc-field">
+                                <label>Target Tabungan per Bulan (%)</label>
+                                <input type="number" id="savingsPercent" value="10" min="0" max="100" step="1">
+                            </div>
+                            <div class="calc-field">
+                                <label>Pengeluaran Rutin (Rp)</label>
+                                <input type="number" id="expenses" value="2500000" placeholder="Contoh: 2500000">
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary" onclick="calculateSavings()" style="width: 100%;">Hitung Proyeksi Tabungan</button>
+                        
+                        <div class="calc-result" id="calcResult">
+                            <h4>Hasil Perhitungan</h4>
+                            <div class="result-number" id="savingsAmount">Rp 0</div>
+                            <p id="savingsDescription"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <h2><i class="fas fa-lightbulb"></i> 7 Kebiasaan Kecil yang Membantu Menabung Tanpa Terasa</h2>
+                    
+                    <ul class="habit-checklist">
+                        <li><strong>Aturan 24 Jam</strong> - Tunda pembelian impulsif selama 24 jam. Biasanya keinginan akan hilang.</li>
+                        <li class="gold"><strong>Menyisihkan Uang Receh</strong> - Setiap akhir hari, masukkan semua koin ke celengan. Bisa terkumpul Rp 100-200rb/bulan.</li>
+                        <li><strong>Catat Pengeluaran Harian</strong> - Gunakan aplikasi atau buku kecil. Sadar pengeluaran kecil yang tidak perlu.</li>
+                        <li class="gold"><strong>Bawa Bekal</strong> - Hemat 50% dari budget makan siang. Rp 20.000/hari = Rp 400.000/bulan.</li>
+                        <li><strong>Manfaatkan Diskon, Bukan Godaan</strong> - Beli barang diskon hanya jika benar-benar butuh.</li>
+                        <li class="gold"><strong>Ubah Reward jadi Tabungan</strong> - Setiap dapat bonus/THR, langsung transfer 50% ke tabungan.</li>
+                        <li><strong>Kurangi Langganan Tidak Terpakai</strong> - Cek aplikasi streaming, gym, dll. Berhenti yang jarang dipakai.</li>
+                    </ul>
+                </div>
+                
+                <div class="article-section">
+                    <h2><i class="fas fa-people-arrows"></i> Mengatasi Hambatan Psikologis Menabung</h2>
+                    
+                    <div style="background: #f5f0e6; border-radius: 20px; padding: 25px; margin: 25px 0;">
+                        <div style="display: grid; gap: 20px;">
+                            <div style="background: white; padding: 20px; border-radius: 16px;">
+                                <h4 style="color: #b38600;">🚧 Hambatan: "Gaji pas-pasan, mana bisa menabung?"</h4>
+                                <p><strong>Solusi:</strong> Mulai dari Rp 5.000/hari. Lebih penting konsistensi daripada nominal. Buktikan Anda bisa, lalu naikkan bertahap.</p>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 16px;">
+                                <h4 style="color: #b38600;">🚧 Hambatan: "Tabungan kepakai lagi untuk darurat"</h4>
+                                <p><strong>Solusi:</strong> Itu FUNGSI tabungan darurat. Jangan kecewa, justru bersyukur ada. Setelah terpakai, bangun lagi dari awal.</p>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 16px;">
+                                <h4 style="color: #b38600;">🚧 Hambatan: "Liat teman lifestyle tinggi, jadi iri"</h4>
+                                <p><strong>Solusi:</strong> Fokus pada tujuan finansial Anda sendiri. Mereka mungkin punya utang besar di belakang layar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <h2><i class="fas fa-chart-line"></i> Produk Keuangan untuk Membantu Menabung</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 30px 0;">
+                        <div style="background: white; border-radius: 20px; padding: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid #eee;">
+                            <i class="fas fa-piggy-bank" style="font-size: 2.5rem; color: var(--primary-mustard); margin-bottom: 15px;"></i>
+                            <h4 style="color: var(--dark-sage);">Tabungan Berjangka</h4>
+                            <p style="font-size: 0.9rem;">Setoran rutin auto-debit, sulit ditarik sebelum jatuh tempo.</p>
+                        </div>
+                        <div style="background: white; border-radius: 20px; padding: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid #eee;">
+                            <i class="fas fa-coins" style="font-size: 2.5rem; color: var(--primary-mustard); margin-bottom: 15px;"></i>
+                            <h4 style="color: var(--dark-sage);">Reksadana Pasar Uang</h4>
+                            <p style="font-size: 0.9rem;">Likuid, minim risiko, cocok untuk tabungan jangka pendek.</p>
+                        </div>
+                        <div style="background: white; border-radius: 20px; padding: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid #eee;">
+                            <i class="fas fa-phone-alt" style="font-size: 2.5rem; color: var(--primary-mustard); margin-bottom: 15px;"></i>
+                            <h4 style="color: var(--dark-sage);">Aplikasi Nabung Otomatis</h4>
+                            <p style="font-size: 0.9rem;">Bibit, Bareksa, Tanamduit - bisa mulai dari Rp 10.000.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h2>Mulai Langkah Kecil Menuju Masa Depan Bebas Hutang</h2>
+                    <p>Setiap rupiah yang Anda tabung hari ini adalah kebebasan finansial di masa depan. Unduh panduan lengkap membangun kebiasaan menabung.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" id="downloadGuideBtn" class="btn-primary"><i class="fas fa-download"></i> Panduan Menabung (PDF)</a>
+                       
+                </div>
+            </main>
+            
+            <!-- Sidebar -->
+            <aside class="article-sidebar">
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-quote-right"></i> Motivasi Hari Ini</h3>
+                    <div class="motivation-card">
+                        <i class="fas fa-quote-left"></i>
+                        <blockquote>"Menabung adalah bentuk cinta kepada diri sendiri di masa depan. Jangan korbankan masa depanmu hanya untuk kesenangan hari ini."</blockquote>
+                        <p style="font-weight: 600;">— Robert Kiyosaki</p>
+                    </div>
+                </div>
+
+                
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-chart-pie"></i> Statistik Menarik</h3>
+                    <div class="mini-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">62%</div>
+                            <div class="stat-label">orang gagal menabung karena tidak punya tujuan jelas</div>
+                        </div>
+                    </div>
+                    <div class="mini-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">Rp 250rb</div>
+                            <div class="stat-label">rata-rata tabungan orang Indonesia per bulan</div>
+                        </div>
+                    </div>
+                    <div class="mini-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3-6 bln</div>
+                            <div class="stat-label">waktu ideal membangun dana darurat</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-download"></i> Gratis!</h3>
+                    <p style="margin-bottom: 15px;">Download template budgeting sederhana untuk memantau pemasukan & pengeluaran.</p>
+                    <a href="#" id="downloadTemplateBtn" class="btn-primary" style="width: 100%; text-align: center; background: var(--primary-mustard); color: var(--dark-charcoal);">
+                        <i class="fas fa-file-excel"></i> Template Budget
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-piggy-bank"></i> EduSmartPinjol
+                    </div>
+                    <p>Membangun generasi Indonesia yang cerdas finansial, bebas dari jeratan hutang, dan mampu menabung untuk masa depan.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Edukasi</h4>
+                    <ul>
+                        <li><a href="pinjolaman.html">Pinjaman Aman</a></li>
+                        <li><a href="perjanjianpinjaman.html">Perjanjian Pinjaman</a></li>
+                        <li><a href="kebutuhanmendesak.html">Pinjaman Darurat</a></li>
+                        <li><a href="#">Menabung setelah Hutang</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 EduSmartPinjol - Membangun Kebiasaan Finansial Sehat. Data dan tips disusun bersama perencana keuangan bersertifikat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Kalkulator Tabungan
+        function calculateSavings() {
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const currentDebt = parseFloat(document.getElementById('currentDebt').value) || 0;
+            const savingsPercent = parseFloat(document.getElementById('savingsPercent').value) || 0;
+            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+            
+            const disposableIncome = income - currentDebt - expenses;
+            const recommendedSavings = disposableIncome * (savingsPercent / 100);
+            
+            const resultDiv = document.getElementById('calcResult');
+            const savingsAmount = document.getElementById('savingsAmount');
+            const savingsDesc = document.getElementById('savingsDescription');
+            
+            if (disposableIncome <= 0) {
+                savingsAmount.textContent = '⚠️ Defisit';
+                savingsDesc.textContent = 'Pengeluaran + cicilan melebihi penghasilan. Perlu evaluasi ulang anggaran.';
+            } else {
+                savingsAmount.textContent = 'Rp ' + recommendedSavings.toLocaleString('id-ID');
+                
+                if (recommendedSavings < 50000) {
+                    savingsDesc.textContent = 'Target realistis. Mulai dari nominal ini dulu, yang penting konsisten.';
+                } else if (recommendedSavings < 200000) {
+                    savingsDesc.textContent = 'Cukup baik. Dalam setahun bisa terkumpul Rp ' + (recommendedSavings * 12).toLocaleString('id-ID');
+                } else {
+                    savingsDesc.textContent = 'Sangat baik! Pertahankan konsistensi untuk mencapai kebebasan finansial.';
+                }
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Download Panduan Menabung
+        document.getElementById('downloadGuideBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const guideContent = `
+                ============================================
+                PANDUAN MENABUNG PASCA-HUTANG
+                ============================================
+                
+                📌 5 LANGKAH AWAL MEMBANGUN KEBIASAAN MENABUNG
+                
+                1. BUAT DANA DARURAT Rp 500.000 DULU
+                   - Target pertama: Rp 500.000
+                   - Jangan pikirkan investasi dulu
+                   - Fokus pada konsistensi
+                
+                2. GUNAKAN METODE "BAYAR DIRI SENDIRI"
+                   - Saat gajian, langsung transfer ke tabungan
+                   - Anggap sebagai "tagihan" yang harus dibayar
+                   - Mulai 5-10% dari gaji
+                
+                3. PISAHKAN REKENING
+                   - Buat rekening khusus tabungan
+                   - Jangan gabung dengan rekening operasional
+                   - Non-aktifkan kartu ATM-nya
+                
+                4. LAKUKAN "NO SPEND CHALLENGE"
+                   - Tantang diri tidak belanja 1-2 hari/minggu
+                   - Uang yang tidak terpakai masuk celengan
+                
+                5. VISUALISASIKAN TUJUAN
+                   - Tempel gambar tujuan di dinding
+                   - Bikin nama rekening sesuai tujuan
+                
+                📊 CONTOH ANGGARAN 50-30-20 UNTUK PASCA-HUTANG
+                
+                50% Kebutuhan Pokok
+                - Makanan, listrik, air, transport, cicilan
+                
+                30% Keinginan
+                - Hiburan, nongkrong, belanja
+                
+                20% Tabungan & Investasi
+                - 10% dana darurat
+                - 5% investasi jangka panjang
+                - 5% dana pensiun
+                
+                🎯 TARGET REALISTIS
+                
+                Bulan 1-3: Tabungan Rp 500.000 - 1 juta
+                Bulan 4-6: Dana darurat 1 bulan pengeluaran
+                Bulan 7-12: Dana darurat 3 bulan pengeluaran
+                Tahun ke-2: Mulai investasi reksadana/emas
+                
+                "Kebebasan finansial bukan tentang seberapa banyak
+                Anda menghasilkan, tapi seberapa banyak yang Anda
+                simpan dan tumbuhkan."
+                
+                EduSmartPinjol - Tim Edukasi Finansial
+            `;
+            
+            const blob = new Blob([guideContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'panduan-menabung-pasca-hutang.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('✅ Panduan berhasil diunduh! Simpan dan praktikkan langkah-langkahnya.');
+        });
+        
+        // Download Template Budget
+        document.getElementById('downloadTemplateBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const templateContent = `
+                ============================================
+                TEMPLATE BUDGETING SEDERHANA
+                ============================================
+                Nama: _________________  Bulan: __________
+                
+                📌 PEMASUKAN
+                1. Gaji Bulanan          : Rp _____________
+                2. Pendapatan Tambahan   : Rp _____________
+                3. Lain-lain             : Rp _____________
+                -------------------------------------------
+                TOTAL PEMASUKAN           Rp _____________
+                
+                📌 PENGELUARAN WAJIB (50%)
+                1. Cicilan Pinjaman       : Rp _____________
+                2. Listrik & Air          : Rp _____________
+                3. Transport              : Rp _____________
+                4. Makanan Pokok          : Rp _____________
+                5. Pendidikan/Asuransi    : Rp _____________
+                6. Lainnya                 : Rp _____________
+                -------------------------------------------
+                TOTAL WAJIB                Rp _____________
+                
+                📌 TABUNGAN & INVESTASI (20%)
+                1. Dana Darurat           : Rp _____________
+                2. Investasi              : Rp _____________
+                3. Dana Pensiun           : Rp _____________
+                -------------------------------------------
+                TOTAL TABUNGAN             Rp _____________
+                
+                📌 KEINGINAN (30%)
+                1. Hiburan                 : Rp _____________
+                2. Nongkrong               : Rp _____________
+                3. Belanja                 : Rp _____________
+                4. Lainnya                 : Rp _____________
+                -------------------------------------------
+                TOTAL KEINGINAN            Rp _____________
+                
+                ============================================
+                SISA (Pemasukan - Pengeluaran): Rp _________
+                
+                CATATAN:
+                _____________________________________________
+                _____________________________________________
+                
+                "Anggaran bukan tentang membatasi, tapi tentang
+                memprioritaskan apa yang benar-benar penting."
+                
+                EduSmartPinjol
+            `;
+            
+            const blob = new Blob([templateContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'template-budget-pasca-hutang.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('✅ Template budget berhasil diunduh! Cetak atau isi langsung di file.');
+        });
+    </script>
+</body>
+</html>
